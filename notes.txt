@@ -1,0 +1,54 @@
+##__ Kubernetes Commands __##
+
+   Things to keep in mind
+
+Kubernetes control plane: manages Kubernetes clusters and the workloads running on them. Include components like the API Server, Scheduler, and Controller Manager.
+Kubernetes data plane: machines that can run containerized workloads. Each node is managed by the kubelet, an agent that receives commands from the control plane.
+
+The Kubernetes control plane is a collection of components that run on master nodes to manage a Kubernetes cluster, 
+while the master node is a single node that hosts the control plane components.
+
+Node: The nodes are bare-metal servers, on-premises VMs, or VMs on a cloud provider. 
+Master Node: A master node is a node which controls and manages a set of worker nodes.
+
+
+# create pod
+kubectl create -f pod.yaml 
+
+# show pods 
+kubectl get pods
+
+# apply
+kubectl apply -f pod.yaml --server-side
+
+# create replicaset
+kubectl create -f replicaset.yaml
+
+# watch
+watch kubectl get pods
+
+
+# describe 
+kubectl describe pod <name>
+
+# delete a pod
+kubectl delete pod mypod
+
+# inside
+ 
+kubectl exec -it challange-74549dff68-nz97m -c ubuntu -- /bin//bash
+
+#logs
+kubectl logs challange-74549dff68-nz97m -c ubuntu
+
+
+
+
+
+
+
+
+kubectl get pods -o wide
+
+
+
